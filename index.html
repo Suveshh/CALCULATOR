@@ -118,6 +118,7 @@
     <script>
         let firstClick = false;
         const a = document.getElementById("text");
+        
         const ChangeText=function(value){
             if (firstClick==0) {
             a.value = ""; 
@@ -126,22 +127,14 @@
             a.value+=value;
         };
         
-        const b = document.getElementsByClassName("NUM");
-        b[0].addEventListener('click' , function(){ChangeText(b[0].innerText)});
-        b[1].addEventListener('click' , function(){ChangeText(b[1].innerText)});
-        b[2].addEventListener('click' , function(){ChangeText(b[2].innerText)});
-        b[3].addEventListener('click' , function(){ChangeText(b[3].innerText)});
-        b[4].addEventListener('click' , function(){ChangeText(b[4].innerText)});
-        b[5].addEventListener('click' , function(){ChangeText(b[5].innerText)});
-        b[6].addEventListener('click' , function(){ChangeText(b[6].innerText)});
-        b[7].addEventListener('click' , function(){ChangeText(b[7].innerText)});
-        b[8].addEventListener('click' , function(){ChangeText(b[8].innerText)});
-        b[9].addEventListener('click' , function(){ChangeText(b[9].innerText)});
-        b[10].addEventListener('click' , function(){ChangeText(b[10].innerText)});
-        b[11].addEventListener('click' , function(){ChangeText(b[11].innerText)});
-        b[13].addEventListener('click' , function(){ChangeText(b[13].innerText)});
-        b[15].addEventListener('click' , function(){ChangeText(b[15].innerText)});
-        
+        const buttons = document.getElementsByClassName("NUM");
+        for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].innerText === '=') continue;
+            
+            buttons[i].addEventListener('click', function() {
+                ChangeText(buttons[i].innerText);
+            });
+        }
         const Clear=function(){
               a.value = "" ;
         }
