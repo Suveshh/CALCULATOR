@@ -1,153 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <style>
-        #body{
-            margin: 20px;
-            background-color: #8dd870;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; 
-            align-items: center;   
-        }
-        #container{
-            height: 540px;
-            width: 450px;
-            background-color: rgb(116, 214, 221);
-            border: 0cm;    
-        }
-        #test{
-            display: flex;
-            justify-content: center;
-        }
-       #text{
-        border: 0cap;
-        width: 420px;
+      body {
+        background-color: #262634;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #r1,
+      #r2,
+      #r3,
+      #r4 {
+        display: flex;
+      }
+      .NUM {
         height: 80px;
-        background-color: beige;
-        margin-top: 20px;
-        box-shadow: 9px 9px 6px #888888;
-        text-align: center;
-        font-size: x-large;
-       }
-      
-       #r1,#r2,#r3,#r4{
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        #buttons{
-            margin-top: 40px;
-        }
-        .NUM{
-            height: 80px;
-            width: 90px;
-            background-color: rgb(231, 231, 225);
-            border: 0cap;
-            font-size: x-large;
-            font-weight: 400;
-            box-shadow: 7px 7px 5px #888888;
-        }
-        .NUM:hover{
-            box-shadow: none;
-        }
-        .NUM:active{
-            box-shadow: 5px 5px 3px #afaeae;
-            transform:translate(2px,2px);
-        }
-        @media screen and (max-width: 480px) {
-            #container{
-            height: 400px;
-            width: 310px; 
-            }
-            #text{
-        width: 260px;
+        width: 80px;
+        border-radius: 45%;
+        border: none;
+        margin: 7px;
+        background-color: #37374b;
+        color: rgb(255, 255, 255);
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 31px;
+        box-shadow: 3px 3px 5px rgba(63, 60, 60, 0.681);
+      }
+      .NUM:hover {
+        box-shadow: 2px 2px 5px rgba(214, 211, 211, 0.681);
+      }
+      .NUM:active {
+        translate: 1px 1px;
+      }
+      #test {
+        display: flex;
+        justify-content: center;
+      }
+      #text {
+        background-color: #37374b;
+        border: none;
+        border-radius: 30px;
+        padding-right: 20px;
+        padding-left: 5px;
         height: 70px;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        text-align: end;
+        font-size: 28px;
+        color: wheat;
+      }
+      #container {
+        border: 1px solid rgba(124, 121, 121, 0.319);
+        margin-top: 30px;
+        padding: 30px;
+        border-radius: 20px;
+        background-color: #202030;
+        box-shadow: 6px 6px 5px rgba(57, 54, 72, 0.429);
+      }
+
+      @media screen and (max-width: 550px) {
+        .NUM {
+          height: 60px;
+          width: 60px;
+          font-size: 28px;
         }
-        .NUM{
-            height: 50px;
-            width: 60px;
+        #text {
+          height: 50px;
+          font-size: 24px;
+          padding-right: 10px;
+          padding-left: 0px;
         }
-        #buttons{
-            margin-top: 30px;
+        #container {
+          padding: 20px;
         }
-    }
-           
+      }
     </style>
-</head>
-<body id="body">
+  </head>
+  <body id="body">
     <div id="container">
-    <div id =test>
+      <div id="test">
         <div id="display">
-            <input type="text" id="text" onfocus = "this.value=''" value="ENTER VALUES">
+          <input type="text" id="text" onfocus="this.value=''" value="0" />
         </div>
-    </div>
-    <div id="buttons">
+      </div>
+      <div id="buttons">
         <div id="r1">
-            <div><button class="NUM" id="btn1">1</button></div>
-            <div><button class="NUM" id="btn2">2</button></div>
-            <div><button class="NUM" id="btn3">3</button></div>
-            <div><button style="background-color:  #7cf16d" class="NUM" id="btn+">+</button></div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btnAC">
+              AC
+            </button>
+          </div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btnDEL">
+              DEL
+            </button>
+          </div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btn%">
+              %
+            </button>
+          </div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btn/">
+              /
+            </button>
+          </div>
         </div>
         <div id="r2">
-            <div><button class="NUM" id="btn4">4</button></div>
-            <div><button class="NUM" id="btn5">5</button></div>
-            <div><button class="NUM" id="btn6">6</button></div>
-            <div><button style="background-color:  #7cf16d" class="NUM" id="btn_">-</button></div>
+          <div><button class="NUM" id="btn1">1</button></div>
+          <div><button class="NUM" id="btn2">2</button></div>
+          <div><button class="NUM" id="btn3">3</button></div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btn*">
+              *
+            </button>
+          </div>
         </div>
         <div id="r3">
-            <div><button class="NUM" id="btn7">7</button></div>
-            <div><button class="NUM" id="btn8">8</button></div>
-            <div><button class="NUM" id="btn9">9</button></div>
-            <div><button style="background-color:  #7cf16d" class="NUM" id="btn*">*</button></div>
+          <div><button class="NUM" id="btn4">4</button></div>
+          <div><button class="NUM" id="btn5">5</button></div>
+          <div><button class="NUM" id="btn6">6</button></div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btn-">
+              -
+            </button>
+          </div>
         </div>
         <div id="r4">
-            <div><button style="background-color:  #f06669" class="NUM" id="btnC">C</button></div>
-            <div><button class="NUM" id="btn0">0</button></div>
-            <div><button class="NUM" id="btn=">=</button></div>
-            <div><button style="background-color:  #7cf16d" class="NUM" id="btn/">/</button></div>
+          <div><button class="NUM" id="btn7">7</button></div>
+          <div><button class="NUM" id="btn8">8</button></div>
+          <div><button class="NUM" id="btn9">9</button></div>
+          <div>
+            <button style="color: rgb(36, 250, 161)" class="NUM" id="btn+">
+              +
+            </button>
+          </div>
         </div>
+        <div id="r3">
+          <div><button class="NUM" id="btn00">00</button></div>
+          <div><button class="NUM" id="btn0">0</button></div>
+          <div><button class="NUM" id="btn.">.</button></div>
+          <div>
+            <button style="background-color: orange" class="NUM" id="btn=">
+              =
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-       </div>
-    </div>
-     
 
     <script>
-        let firstClick = false;
-        const a = document.getElementById("text");
-        
-        const ChangeText=function(value){
-            if (firstClick==0) {
-            a.value = ""; 
-            firstClick = true; 
-        }
-            a.value+=value;
-        };
-        
-        const buttons = document.getElementsByClassName("NUM");
-        for (let i = 0; i < buttons.length; i++) {
-            if (buttons[i].innerText === '=') continue;
-            
-            buttons[i].addEventListener('click', function() {
-                ChangeText(buttons[i].innerText);
-            });
-        }
-        const Clear=function(){
-              a.value = "" ;
-        }
-        const c = document.getElementById("btnC");
-        c.addEventListener('click' , Clear);
+      let firstClick = false;
+      const a = document.getElementById("text");
 
-        const Evaluate = function(){
-            a.value=eval(a.value);
+      const ChangeText = function (value) {
+        if (firstClick == 0) {
+          a.value = "";
+          firstClick = true;
         }
-        const d = document.getElementById("btn=");
-        d.addEventListener('click' , Evaluate);
-       
-</script>
-    
-</body>
+        a.value += value;
+      };
+
+      const buttons = document.getElementsByClassName("NUM");
+      for (let i = 0; i < buttons.length; i++) {
+        if (buttons[i].innerText === "=" || buttons[i].innerText === "DEL")
+          continue;
+
+        buttons[i].addEventListener("click", function () {
+          ChangeText(buttons[i].innerText);
+        });
+      }
+      const Clear = function () {
+        a.value = "";
+      };
+      const c = document.getElementById("btnAC");
+      c.addEventListener("click", Clear);
+
+      const DeleteLastDigit = function () {
+        a.value = a.value.slice(0, -1);
+      };
+      const e = document.getElementById("btnDEL");
+      e.addEventListener("click", DeleteLastDigit);
+
+      const Evaluate = function () {
+        a.value = eval(a.value);
+      };
+      const d = document.getElementById("btn=");
+      d.addEventListener("click", Evaluate);
+    </script>
+  </body>
 </html>
